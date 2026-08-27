@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object in JavaScript</title>
+
+    <script>
+
+        // ==========================================
+        // 1. Object Literal
+        // ==========================================
+
+        let student = {
+            first: "Abhay",
+            last: "Kumar",
+            city: "Delhi",
+            pincode: "110092",
+
+            salary: function() {
+                document.write("Salary function called<br>");
+            },
+
+            subject: ["webdev", "c++", "Java"]
+        };
+
+        console.log(student.first);
+        console.log(student.last);
+
+        student.salary();
+
+        console.log(student.subject[0]);
+        console.log(student.subject[1]);
+
+
+        // ==========================================
+        // 2. Using new Object()
+        // ==========================================
+
+        let student2 = new Object();
+
+        student2.name = "Abhay";
+        student2.pincode = "110092";
+
+        student2.salary = function() {
+            document.write("Student2 salary function called<br>");
+        };
+
+        console.log(student2.name);
+        console.log(student2.pincode);
+
+        student2.salary();
+
+
+        // ==========================================
+        // 3. Constructor Function
+        // ==========================================
+
+        function Student(name, rollno, pincode, city) {
+
+            this.name = name;
+            this.rollno = rollno;
+            this.pincode = pincode;
+            this.city = city;
+
+        }
+
+        let s1 = new Student("Abhay", 101, 20201, "Delhi");
+        let s2 = new Student("Aaki", 102, 12112, "Goa");
+
+        console.log(s1.name);
+        console.log(s1.rollno);
+        console.log(s1.pincode);
+        console.log(s1.city);
+
+        console.log(s2.name);
+        console.log(s2.rollno);
+        console.log(s2.pincode);
+        console.log(s2.city);
+
+
+        // ==========================================
+        // 4. Using Class
+        // ==========================================
+
+        class StudentClass {
+
+            constructor(name, pincode) {
+                this.name = name;
+                this.pincode = pincode;
+            }
+
+            display() {
+                console.log(this.name);
+                console.log(this.pincode);
+            }
+        }
+
+        let s3 = new StudentClass("Vikas", 2023943);
+        let s4 = new StudentClass("Abhay", 463747);
+
+        s3.display();
+        s4.display();
+
+    </script>
+
+</head>
+
+<body>
+
+    <h1>JavaScript Objects</h1>
+
+</body>
+</html>
