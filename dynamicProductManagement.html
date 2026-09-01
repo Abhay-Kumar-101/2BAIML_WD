@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Product Management</title>
+
+    <script>
+
+        // User-defined object using class
+        class Product {
+
+            constructor(productId, productName, price, quantity) {
+                this.productId = productId;
+                this.productName = productName;
+                this.price = price;
+                this.quantity = quantity;
+            }
+            totalPrice() {
+                return this.price * this.quantity;
+            }
+            updateQuantity(newQuantity) {
+                this.quantity = newQuantity;
+            }
+            display() {
+                console.log("Product ID:", this.productId);
+                console.log("Product Name:", this.productName);
+                console.log("Price:", this.price);
+                console.log("Quantity:", this.quantity);
+                console.log("Total Price:", this.totalPrice());
+            }
+        }
+
+
+        let productId=Number(prompt("Enter product ID"));
+        let productName=prompt("Enter Product name ");
+        let price=Number(prompt("Enter price of product"));
+        let quantity=Number(prompt("Enter Quantity of product"));
+
+        let p1 = new Product(productId, productName, price, quantity);
+
+        p1.display();
+        let newQuantity=Number(prompt("Enter newQuantity of product"));
+
+        p1.updateQuantity(newQuantity);
+
+        console.log("After updating quantity:");
+        p1.display();
+
+    </script>
+</head>
+
+<body>
+
+    <h2>Product Management</h2>
+
+</body>
+</html>
