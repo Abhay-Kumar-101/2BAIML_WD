@@ -1,125 +1,56 @@
-<!-- <!DOCTYPE html>
-<html>
-<head>
-    <title>Product Management</title>
-
-    <script>
-
-        // User-defined object using class
-        class Product {
-
-            constructor(productId, productName, price, quantity) {
-                this.productId = productId;
-                this.productName = productName;
-                this.price = price;
-                this.quantity = quantity;
-            }
-            totalPrice() {
-                return this.price * this.quantity;
-            }
-            updateQuantity(newQuantity) {
-                this.quantity = newQuantity;
-            }
-            display() {
-                console.log("Product ID:", this.productId);
-                console.log("Product Name:", this.productName);
-                console.log("Price:", this.price);
-                console.log("Quantity:", this.quantity);
-                console.log("Total Price:", this.totalPrice());
-            }
-        }
-
-
-        let p1 = new Product(101, "Laptop", 50000, 2);
-
-        p1.display();
-
-        p1.updateQuantity(3);
-
-        console.log("After updating quantity:");
-        p1.display();
-
-    </script>
-</head>
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Product Management</title>
-
-    <script>
-
-        // User-defined object using class
-        class Product {
-
-            constructor(productId, productName, price, quantity) {
-                this.productId = productId;
-                this.productName = productName;
-                this.price = price;
-                this.quantity = quantity;
-            }
-
-            // Calculate total price
-            totalPrice() {
-                return this.price * this.quantity;
-            }
-
-            // Update quantity
-            updateQuantity(newQuantity) {
-                this.quantity = newQuantity;
-            }
-
-            // Display product information
-            display() {
-                console.log("Product ID:", this.productId);
-                console.log("Product Name:", this.productName);
-                console.log("Price:", this.price);
-                console.log("Quantity:", this.quantity);
-                console.log("Total Price:", this.totalPrice());
-            }
-        }
-
-
-        // Taking input from user
-        let productId = Number(prompt("Enter Product ID:"));
-        let productName = prompt("Enter Product Name:");
-        let price = Number(prompt("Enter Price:"));
-        let quantity = Number(prompt("Enter Quantity:"));
-
-
-        // Create object
-        let p1 = new Product(productId, productName, price, quantity);
-
-
-        // Display original details
-        console.log("Product Details:");
-        p1.display();
-
-
-        // Update quantity
-        let newQuantity = Number(prompt("Enter new quantity:"));
-
-        p1.updateQuantity(newQuantity);
-
-
-        // Display updated details
-        console.log("After updating quantity:");
-
-        p1.display();
-
-    </script>
+    <title>Bank Account Management</title>
 </head>
-
 <body>
+  <h2>Bank Account Management System</h2>
+  <script>
+    // User Input
+        let name = prompt("Enter Account Holder Name:");
+        let accountNumber = prompt("Enter Account Number:");
+        let balance = Number(prompt("Enter Account Balance:"));
+        // User-defined object
+        let bankAccount = {
+            accountHolderName: name,
+            accountNumber: accountNumber,
+            accountBalance: balance,
+    // Deposit method
+            deposit: function(amount) {
+                this.accountBalance += amount;
+                document.write("<p>Deposited Amount: ₹" + amount + "</p>");
+            },
+            // Withdraw method
+            withdraw: function(amount) {
 
-    <h2>Product Management</h2>
-
-    <p>Open the browser console using <b>F12 → Console</b> to see the output.</p>
-
+                if (amount > this.accountBalance) {
+                    document.write("<p>Insufficient Balance</p>");
+                } 
+                else {
+                    this.accountBalance -= amount;
+                    document.write("<p>Withdrawn Amount: ₹" + amount + "</p>");
+                }
+            },
+            // Display balance
+            displayBalance: function() {
+                document.write(
+                    "<p>Current Balance: ₹" + this.accountBalance + "</p>"
+                );
+            }
+        };
+        // Display account details
+        document.write("<h3>Account Details</h3>");
+        document.write("<p>Account Holder: " + bankAccount.accountHolderName + "</p>");
+        document.write("<p>Account Number: " + bankAccount.accountNumber + "</p>");
+        document.write("<p>Initial Balance: ₹" + bankAccount.accountBalance + "</p>");
+        // Deposit
+        let depositAmount = Number(prompt("Enter amount to deposit:"));
+        bankAccount.deposit(depositAmount);
+    // Withdraw
+        let withdrawAmount = Number(prompt("Enter amount to withdraw:"));
+        bankAccount.withdraw(withdrawAmount);
+     // Current Balance
+        bankAccount.displayBalance();
+ </script>
 </body>
 </html>
-<body>
-
-    <h2>Product Management</h2>
-
-</body>
-</html> -->
