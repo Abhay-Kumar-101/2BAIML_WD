@@ -1,77 +1,3 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>string Tempalte</title>
-    <script>
-        let firstName = "abhay";
-        let lastName = " kumar";
-        console.log(`My first Name is ${firstName}`)
-        console.log(`My name is: ${firstName}${lastName}`);
-        console.log(`My name is: ${firstName}${lastName}`);
-        function FullName(first, last) {
-            return `${first}${last}`
-
-        }
-        let Name = `Hell ${FullName(firstName, lastName)}`;
-        console.log(Name);
-
-
-        // NORMAL FUNCTION
-        function hello() {
-            console.log("hello world")
-
-        }
-        // or
-        let hello2 = function () {
-            console.log("hello world");
-        }
-        // arrow function
-        hello3 = () => console.log("hello world");
-
-        // or
-        hello4 = () => console.log("hello world");
-
-
-        let marks = 5;
-        let first = 6;
-        let last = 7;
-
-        function physics(marks) {
-            return `${marks}`;
-        }
-
-        physics = (marks) => `${marks}`;
-
-        FullName = (First, Last) => `${First}${Last}`;
-        let n=prompt("Enter no. of rows")
-
-        const pattern=(n)=>{
-            for(let i=0;i>n;i++){
-                for(let j=i;j<=i;i++){
-                    console.log(`&{*}`)
-                }
-
-            }
-
-        }
-
-
-
-
-
-    </script>
-</head>
-
-<body>
-    <h1>STRING TEMPLATES</h1>
-    <h1>ARROW FUNCTION</h1>
-
-</body>
-
-</html> -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -144,26 +70,26 @@
         const FullName2 = (First, Last) => `${First}${Last}`;
 
 
-        // PATTERN
+        // // PATTERN
 
-        let n = Number(prompt("Enter no. of rows"));
+        // let n = Number(prompt("Enter no. of rows"));
 
-        const pattern = (n) => {
+        // const pattern = (n) => {
 
-            for (let i = 0; i < n; i++) {
+        //     for (let i = 0; i < n; i++) {
 
-                let row = "";
+        //         let row = "";
 
-                for (let j = 0; j <= i; j++) {
-                    row += "*";
-                }
+        //         for (let j = 0; j <= i; j++) {
+        //             row += "*";
+        //         }
 
-                console.log(row);
-            }
+        //         console.log(row);
+        //     }
 
-        };
+        // };
 
-        pattern(n);
+        // pattern(n);
 
         // function sum(...values){
         //     let total=0;
@@ -174,15 +100,16 @@
         // }
 
         // console.log(sum(10,20,30,57,34,678896,54));
-        function sum(name,first,...values){
+        function sum(name1,first,...values){
             let total=0;
             for(let n of values){
                 total=total+n;
             }
-            return total;
+            console.log("name:",name1);
+            console.log("total",total);
         }
 
-        console.log(sum(10,20,30,57,34,678896,54));
+        console.log(sum("ABHAY",2,3,5,6,4));
 
     </script>
 </head>
