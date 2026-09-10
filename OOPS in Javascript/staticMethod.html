@@ -5,18 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
-        class student {
-            let name;
-            let rollno;
-            constructor9(name,rollno){
-                name=name;
-                roll=rollno;
-                console.log(name);
-                console.log(roll);
+        class Student {
+    constructor(name, rollNo) {
+        this.name = name;
+        this.rollNo = rollNo;
+    }
 
-            }
+    // Normal method
+    display() {
+        console.log("Name:", this.name);
+        console.log("Roll No:", this.rollNo);
+    }
 
-        }
+    // Static method
+    static collegeInfo() {
+        console.log("College: ABES Engineering College");
+    }
+}
+
+// Creating objects
+let s1 = new Student("Abhay", 5);
+let s2 = new Student("Rahul", 10);
+
+// Calling normal method
+s1.display();
+s2.display();
+
+// Calling static method using class name
+Student.collegeInfo();
+
     </script>
 </head>
 <body>
