@@ -8,12 +8,15 @@
 <body>
 
 <script>
+
+    // Parent class
     class Hello {
         constructor() {
             console.log("Hello constructor");
         }
     }
 
+    // Child class
     class Hi extends Hello {
         constructor() {
             super();
@@ -21,20 +24,30 @@
         }
     }
 
+    // Object of Hi
     let obj = new Hi();
-    class info{
-        info1(){
-            console.log("infohello")
+
+
+    // Parent class
+    class Info {
+        info1() {
+            console.log("infohello");
         }
     }
-    class hi extends Hello(){
-        info(){
-            super info1();
+
+    // Child class
+    class HiInfo extends Info {
+        info() {
+            super.info1();
             console.log("infohi");
         }
     }
-    let h1=new Hi();
-    hi.info();
+
+    // Object of HiInfo
+    let h1 = new HiInfo();
+
+    h1.info();
+
 </script>
 
 </body>
