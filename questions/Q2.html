@@ -10,10 +10,14 @@
 <body>
     <script>
         class BankAccount {
+            static Bankinfo(BankName) {
+                this.BankName = BankName;
+            }
             constructor(accountNo, holderName, balance) {
                 this.accountNo = accountNo;
                 this.holderName = holderName;
                 this.balance = balance;
+
 
             }
             deposit(amount) {
@@ -23,32 +27,45 @@
             }
             withdraw(amount) {
                 if (amount > this.balance) {
-                    console.log("Insuffcient balance ")
+                    console.log("Cannot withdraw : Insuffcient balance ")
+                }
+                else {
+                    this.balance -= amount;
+
+                    console.log("Amount withdrawn =", amount);
+                    console.log("Remaining balance =", this.balance);
                 }
             }
             displayBalance() {
-                console.log("AccountID :", this.accountNo)
-                console.log("Account Holder :", this.holderName)
+                console.log("Account ID :", this.accountNo);
+                console.log("Account Holder :", this.holderName);
                 console.log("Balance :", this.balance);
-            }
-            static Bankinfo() {
-                console.log("Bank Name: SBI")
+                console.log("Bank Name :", BankAccount.BankName);
+                console.log("----------------------");
             }
         }
-        let s1 = new BankAccount(1, "abhay", 45);
-        let s2 = new BankAccount(2, "archit", 4);
+        BankAccount.Bankinfo("SBI");
+        let s1 = new BankAccount(1, "Abhay", 45);
+        let s2 = new BankAccount(2, "Archit", 4);
+
 
 
         s1.displayBalance();
+
         s1.deposit(59);
-        s1.displayBalance();
-        s1.withdraw(200);
-        s2.displayBalance();
-        s2.deposit(1000);
-        s2.displayBalance();
-        s2.withdraw(200);
 
-        BankAccount.Bankinfo()
+        s1.displayBalance();
+
+        s1.withdraw(200);
+        // _______________________________________________________
+
+        s2.displayBalance();
+
+        s2.deposit(1000);
+
+        s2.displayBalance();
+
+        s2.withdraw(200)
 
     </script>
 
