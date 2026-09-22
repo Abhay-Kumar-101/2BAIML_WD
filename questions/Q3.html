@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Commerce Product System</title>
+</head>
+
+<body>
+
+    <h1>E-Commerce Product System</h1>
+
+    <script>
+
+        class Employee {
+            constructor(id, name, sal) {
+                this.id = id;
+                this.name = name;
+                this.sal = sal;
+            }
+
+            calculateSalary() {
+                console.log("Employee Salary:", this.sal);
+            }
+        }
+
+        class Manager extends Employee {
+            constructor(id, name, sal, incentive) {
+                super(id, name, sal);
+                this.incentive = incentive;
+            }
+
+      
+            calculateSalary() {
+                let totalSalary = this.sal + this.incentive;
+
+                console.log("Manager ID:", this.id);
+                console.log("Manager Name:", this.name);
+                console.log("Manager Salary:", totalSalary);
+            }
+        }
+
+      
+        let emp1 = new Employee(101, "Rahul", 30000);
+
+       
+        let manager1 = new Manager(102, "Abhay", 50000, 10000);
+
+        emp1.calculateSalary();
+
+        manager1.calculateSalary();
+
+    </script>
+
+</body>
+
+</html>
