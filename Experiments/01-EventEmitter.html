@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experiment-1</title>
+</head>
+<body>
+    <h1>Experiment-1</h1>
+
+<script>
+// const EventEmitter = require('events');
+
+
+// const ud=new EventEmitter()
+
+// ud.on('greet',(name)=>{
+//     console.log(`Hello there 2B ${name}`)
+
+// })
+
+// ud.on('exit', (num)=>{
+// console.log(`Thanku for visit ${num}`)
+//     })
+
+//     ud.emit("greet", "Abhay");
+//     ud.emit("Abhay");
+
+
+const EventEmitter = require('events');
+class Button extends EventEmitter{
+    click(){
+        this.emit("This has been clicked")
+    }
+}
+const button=new Button();
+button.on(`click`,()=>{
+    console.log("Button Clicked");
+});
+    
+
+</script>
+
+</body>
+</html>
